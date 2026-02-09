@@ -1,4 +1,3 @@
-```markdown
 # MOS 6502 Emulator for Luau
 
 A cycle-accurate **MOS 6502** CPU emulator written in strict **Luau**, backed entirely by a flat `buffer` for maximum performance. Designed for use in [Roblox](https://www.roblox.com/) projects and compatible with `--!native` JIT compilation.
@@ -516,4 +515,3 @@ export type MOS6502Instance = {
 ## License
 
 MIT License. See [LICENSE](LICENSE) for details.
-```
