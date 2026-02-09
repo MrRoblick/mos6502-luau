@@ -143,9 +143,9 @@ Returns `0` if the CPU is halted.
 local cycles = cpu:Step() -- execute single instruction
 ```
 
-#### `cpu:Run(targetCycles: number) → number`
+#### `cpu:Run(TargetCycles: number) → number`
 
-Executes instructions until at least `targetCycles` cycles have been consumed or the CPU halts. Returns the actual number of cycles executed.
+Executes instructions until at least `TargetCycles` cycles have been consumed or the CPU halts. Returns the actual number of cycles executed.
 
 ```luau
 local executed = cpu:Run(29781) -- ~1 frame at 1.79 MHz
@@ -201,11 +201,11 @@ cpu:TriggerIRQ() -- maskable (respects I flag)
 
 ### Memory Access
 
-#### `cpu:ReadMemory(addr: number) → number`
+#### `cpu:ReadMemory(Addr: number) → number`
 
 Reads a single byte from the 64KB address space.
 
-#### `cpu:WriteMemory(addr: number, val: number) → ()`
+#### `cpu:WriteMemory(Addr: number, Val: number) → ()`
 
 Writes a single byte to the 64KB address space.
 
