@@ -402,15 +402,14 @@ end
 local cpu = MOS6502.new()
 
 local program = buffer.fromstring(
-    "\xA9\x05" ..               -- LDA #5
-    "\x20\x0B\x06" ..           -- JSR $060B (double)
-    "\x20\x0B\x06" ..           -- JSR $060B (double)
-    "\x8D\x00\x04" ..           -- STA $0400
-    "\x02" ..                   -- HLT
-    "\x0A" ..                   -- double: ASL A
-    "\x60"                      -- RTS
+	"\xA9\x05" ..               -- LDA #5
+		"\x20\x0C\x06" ..           -- JSR $060C
+		"\x20\x0C\x06" ..           -- JSR $060C
+		"\x8D\x00\x04" ..           -- STA $0400
+		"\x02" ..                   -- HLT ($060B)
+		"\x0A" ..                   -- ASL A ($060C)
+		"\x60"                      -- RTS
 )
-
 cpu:LoadProgram(program, 0x0600)
 cpu:SetResetVector(0x0600)
 cpu:Reset()
