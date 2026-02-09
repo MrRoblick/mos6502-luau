@@ -92,8 +92,8 @@ Copies the contents of `program` into CPU memory starting at `addr`.
 
 | Parameter | Type | Default | Description |
 |-----------|------|---------|-------------|
-| `program` | `buffer` | — | Raw machine code bytes |
-| `addr` | `number?` | `0x0600` | Load address in the 64KB address space |
+| `Program` | `buffer` | — | Raw machine code bytes |
+| `Addr` | `number?` | `0x0600` | Load address in the 64KB address space |
 
 ```luau
 cpu:LoadProgram(myRom, 0x8000)
