@@ -1374,8 +1374,9 @@ local __class = {} do
 
 	@native @checked function __class.Run(self: MOS6502Instance, TargetCycles: number): number
 		local executed = 0
+		local step = self.Step
 		while executed < TargetCycles do
-			local c = self:Step()
+			local c = step(self)
 			if c == 0 then break end
 			executed += c
 		end
