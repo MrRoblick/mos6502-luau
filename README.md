@@ -86,9 +86,9 @@ local cpu = MOS6502.new()
 
 ### Program Loading
 
-#### `cpu:LoadProgram(program: buffer, addr: number?) → ()`
+#### `cpu:LoadProgram(Program: buffer, Addr: number?) → ()`
 
-Copies the contents of `program` into CPU memory starting at `addr`.
+Copies the contents of `Program` into CPU memory starting at `Addr`.
 
 | Parameter | Type | Default | Description |
 |-----------|------|---------|-------------|
@@ -111,17 +111,17 @@ The 6502 uses three 16-bit vectors at the top of memory:
 | RESET | `$FFFC–$FFFD` | `SetResetVector` |
 | IRQ/BRK | `$FFFE–$FFFF` | `SetIRQVector` |
 
-#### `cpu:SetResetVector(addr: number) → ()`
+#### `cpu:SetResetVector(Addr: number) → ()`
 
-Writes `addr` to `$FFFC–$FFFD`. The CPU jumps here on `Reset()`.
+Writes `Addr` to `$FFFC–$FFFD`. The CPU jumps here on `Reset()`.
 
-#### `cpu:SetIRQVector(addr: number) → ()`
+#### `cpu:SetIRQVector(Addr: number) → ()`
 
-Writes `addr` to `$FFFE–$FFFF`. The CPU jumps here on `BRK` or hardware IRQ.
+Writes `Addr` to `$FFFE–$FFFF`. The CPU jumps here on `BRK` or hardware IRQ.
 
-#### `cpu:SetNMIVector(addr: number) → ()`
+#### `cpu:SetNMIVector(Addr: number) → ()`
 
-Writes `addr` to `$FFFA–$FFFB`. The CPU jumps here on NMI.
+Writes `Addr` to `$FFFA–$FFFB`. The CPU jumps here on NMI.
 
 ```luau
 cpu:SetResetVector(0x0600)
